@@ -6,7 +6,7 @@ from discord.abc import Messageable
 
 client = Bot(command_prefix=">")
 
-token = "ODA3Mjg4MDYwOTcwMDA4NjA3.YB1zmA.LcpG91t26SOI0_QtrJhAREekaEE"
+token = "ODA3Mjg4MDYwOTcwMDA4NjA3.YB1zmA.PewKX6-SXPQaZ404vswKxGBcmwo"
 
 
 @client.event
