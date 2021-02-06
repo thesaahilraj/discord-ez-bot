@@ -7,7 +7,7 @@ import os
 
 client = Bot(command_prefix=">")
 
-token = os.environ['token']
+token = os.environ['token_keys']
 
 
 @client.event
