@@ -3,8 +3,12 @@ import discord
 from discord.ext.commands import Bot
 from discord import message
 from discord.abc import Messageable
+import os
 
 client = Bot(command_prefix=">")
+
+token = os.environ['token']
+
 
 @client.event
 async def on_ready():
@@ -13,7 +17,7 @@ async def on_ready():
 
 @client.command()
 async def hello(ctx):
-    await ctx.send("Hello Gaandu!")
+    await ctx.send("Hello!")
 
 
 @client.command(pass_context=True)
@@ -21,6 +25,6 @@ async def clean(ctx, number):
     number = int(number)
     async for msg in Messageable.history(ctx.message.channel, limit=number):
         await message.Message.delete(msg)
-    await ctx.send("{} messages cleared! Mat Karo bhai itna Cheating".format(number))
+    await ctx.send("{} messages cleared!".format(number))
 
 client.run(token)
