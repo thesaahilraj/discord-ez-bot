@@ -23,8 +23,10 @@ async def hello(ctx):
 @client.command(pass_context=True)
 async def clean(ctx, number):
     number = int(number)
+    count = 0
     async for msg in Messageable.history(ctx.message.channel, limit=number):
         await message.Message.delete(msg)
-    await ctx.send("{} messages cleared!".format(number))
+        count = count+1
+    await ctx.send("{} messages cleared!".format(count))
 
 client.run(token)
